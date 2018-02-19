@@ -341,7 +341,8 @@ public class MainActivity extends AppCompatActivity {
     //End Mani code
 
     //Sensor and socket calls
-    public void setListners(SensorManager sensorManager, SensorEventListener mEventListener) {
+    public void setListners(SensorManager sensorManager, SensorEventListener mEventListener)
+    {
         sensorManager.registerListener(mEventListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 125000);
         sensorManager.registerListener(mEventListener, sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD),
