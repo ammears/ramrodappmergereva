@@ -4,7 +4,11 @@
 * 2017-18
 * 2-8-18
 * ramrodappmergereva
-* Changes from last revision:  Merged code with A. Mani
+* Changes from last revision:  Merged code with A. Mani.
+*                              Changed font colors to be readable with black background.
+*                              Added image for camera reset button.
+*                              Changed button sizes and position to provide more
+*                              open screen area for video use.
 *                               - A. Mears
 */
 
@@ -67,17 +71,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Mani code
-        addrField = (EditText)findViewById(R.id.addr);
-        btnConnect = (Button)findViewById(R.id.connect);
-        streamView = (VideoView)findViewById(R.id.streamview);
+        //addrField = (EditText)findViewById(R.id.addr);
+        //btnConnect = (Button)findViewById(R.id.connect);
+        //streamView = (VideoView)findViewById(R.id.streamview);
 
-        btnConnect.setOnClickListener(new View.OnClickListener(){
+        //btnConnect.setOnClickListener(new View.OnClickListener(){
 
-            @Override
-            public void onClick(View v) {
-                String s = addrField.getEditableText().toString();
-                playStream(s);
-            }});
+            //@Override
+            //public void onClick(View v) {
+                //String s = addrField.getEditableText().toString();
+               // playStream(s);
+           // }});
         //End Mani Code
 
         SensorManager sensorManager = (SensorManager) this.getSystemService(SENSOR_SERVICE);
@@ -227,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
         });
         //End Left/Right Button code
         //Camera Reset - Returns camera servos to center position regardless of current position
-        btnReset = (Button) findViewById(R.id.btnReset);
+        ImageButton btnReset = (ImageButton) findViewById(R.id.btnReset);
         //Reset Button
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -238,62 +242,84 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //Start/Stop of Car Motion
-        ImageButton btnRun = (ImageButton) findViewById(R.id.btnRun);
+        ImageButton imageButton4 = (ImageButton) findViewById(R.id.imageButton4);
         //Reset Button
-        btnRun.setOnClickListener(new View.OnClickListener() {
+
+        imageButton4.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if (Run == 0) {
-                    Run = 1;
-                } else {
-                    Run = 0;
+            public void onClick(View v)
+            {
+                if (Run == 0)
+                    {
+                        Run = 1;
+                    }
+                else
+                    {
+                        Run = 0;
+                    }
+
+                ImageButton button = (ImageButton) v;
+                int icon;
+                if (paused)
+                {
+                    paused = false;
+                    icon = R.drawable.redstop3;
                 }
+                else
+                {
+                    paused = true;
+                    icon = R.drawable.greenstart3;
+                }
+
+                button.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), icon));
+
             }
         });
         //End of Button code
     }
 
     //Mani code
-    private void playStream(String src){
-        Uri UriSrc = Uri.parse(src);
-        if(UriSrc == null){
-            Toast.makeText(MainActivity.this,
-                    "UriSrc == null", Toast.LENGTH_LONG).show();
-        }else{
-            streamView.setVideoURI(UriSrc);
-            mediaController = new MediaController(this);
-            streamView.setMediaController(mediaController);
-            streamView.start();
+    //private void playStream(String src){
+       // Uri UriSrc = Uri.parse(src);
+       //if(UriSrc == null){
+          //  Toast.makeText(MainActivity.this,
+          //          "UriSrc == null", Toast.LENGTH_LONG).show();
+       // }else{
+          //  streamView.setVideoURI(UriSrc);
+           // mediaController = new MediaController(this);
+           // streamView.setMediaController(mediaController);
+           // streamView.start();
 
-            Toast.makeText(MainActivity.this,
-                    "Connect: " + src,
-                    Toast.LENGTH_LONG).show();
-        }
-    }
+           // Toast.makeText(MainActivity.this,
+           //         "Connect: " + src,
+               //     Toast.LENGTH_LONG).show();
+       // }
+    //}
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        streamView.stopPlayback();
-    }
+    //@Override
+    //protected void onDestroy() {
+      //  super.onDestroy();
+      //  streamView.stopPlayback();
+    //}
+
     private boolean paused = true;
+    public void buttonPressed(View v)
+    {
 
-    public void buttonPressed(View view) {
-
-        ImageButton button = (ImageButton) view;
+        ImageButton button = (ImageButton) v;
         int icon;
-
-        if (paused) {
+        if (paused)
+        {
             paused = false;
             icon = R.drawable.greenstart3;
         }
-        else{
+        else
+        {
             paused = true;
             icon = R.drawable.redstop3;
         }
 
-        button.setImageDrawable(
-                ContextCompat.getDrawable(getApplicationContext(), icon));
+        button.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), icon));
 
 
 

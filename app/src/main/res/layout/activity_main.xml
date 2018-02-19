@@ -4,147 +4,116 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#000000"
     android:screenOrientation="landscape"
     tools:context="com.example.aaron.ramrodappmergereva.MainActivity">
 
-    <VideoView
-        android:id="@+id/streamview"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/btnDown"
-        android:layout_width="130dp"
-        android:layout_height="90dp"
+        android:layout_width="93dp"
+        android:layout_height="68dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:alpha="0.30"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintHorizontal_bias="0.69"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48"
+        app:layout_constraintVertical_bias="0.447"
         app:srcCompat="@drawable/down2" />
 
     <ImageButton
         android:id="@+id/btnRight"
-        android:layout_width="130dp"
-        android:layout_height="90dp"
+        android:layout_width="93dp"
+        android:layout_height="68dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginLeft="146dp"
         android:layout_marginRight="8dp"
-        android:layout_marginStart="146dp"
         android:layout_marginTop="8dp"
         android:alpha="0.30"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48"
+        app:layout_constraintVertical_bias="0.447"
         app:srcCompat="@drawable/right2" />
 
     <ImageButton
         android:id="@+id/btnLeft"
-        android:layout_width="130dp"
-        android:layout_height="90dp"
+        android:layout_width="93dp"
+        android:layout_height="68dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="8dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:alpha="0.30"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48000002"
+        app:layout_constraintVertical_bias="0.447"
         app:srcCompat="@drawable/left2" />
 
     <ImageButton
         android:id="@+id/btnUp"
-        android:layout_width="130dp"
-        android:layout_height="90dp"
+        android:layout_width="93dp"
+        android:layout_height="68dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="16dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:alpha="0.30"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.89"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48000002"
+        app:layout_constraintVertical_bias="0.447"
         app:srcCompat="@drawable/up2" />
 
 
-    <EditText
-        android:id="@+id/addr"
-        android:layout_width="213dp"
-        android:layout_height="39dp"
-        android:background="#FFFFFF"
-        android:text="http://192.168.x.xx:8090"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.945" />
-
-
     <ImageButton
-        android:id="@+id/btnRun"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:id="@+id/imageButton4"
+        android:layout_width="80dp"
+        android:layout_height="83dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:onClick="buttonPressed"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.995"
+        app:layout_constraintHorizontal_bias="0.983"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.963"
+        app:layout_constraintVertical_bias="0.96"
         app:srcCompat="@drawable/greenstart3" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnReset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="58dp"
+        android:layout_height="55dp"
         android:text="Cam Reset"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDown" />
+        app:layout_constraintTop_toBottomOf="@+id/btnDown"
+        app:layout_constraintVertical_bias="0.71000004"
+        app:srcCompat="@drawable/reset3" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Throttle"
+        android:textColor="#F00"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.632"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -157,6 +126,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Steering"
+        android:textColor="#F00"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.331"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -166,29 +136,18 @@
 
     <EditText
         android:id="@+id/ipAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="163dp"
+        android:layout_height="39dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="192.168.4.1:21567"
+        android:textColor="#F00"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.997"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.015" />
-
-
-    <Button
-        android:id="@+id/connect"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
-        android:text="Connect"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.944" />
 
 
 
