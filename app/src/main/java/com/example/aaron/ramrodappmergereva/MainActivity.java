@@ -14,7 +14,6 @@
 
 package com.example.aaron.ramrodappmergereva;
 
-
 import android.media.Image;
 import android.os.AsyncTask;
 import android.support.v4.content.ContextCompat;
@@ -128,26 +127,33 @@ public class MainActivity extends AppCompatActivity {
                 if (throttle <= 60 && throttle >= 40)//forward scale
                 {
                     speedpercent = (throttle - 60) * -5;
-                } else if (throttle >= 85 && throttle <= 105)//reverse scale
+                }
+                else if (throttle >= 85 && throttle <= 105)//reverse scale
                 {
                     speedpercent = -((throttle - 85) * 2.5);
-                } else if (throttle < 40 && throttle >= 30)//100% throttle window
+                }
+                else if (throttle < 40 && throttle >= 30)//100% throttle window
                 {
                     speedpercent = 100;
-                } else if (throttle > 105 && throttle <= 140)//reverse max speed window
+                }
+                else if (throttle > 105 && throttle <= 140)//reverse max speed window
                 {
                     speedpercent = -50;
-                } else //0% throttle for everything else
+                }
+                else //0% throttle for everything else
                 {
                     speedpercent = 0;
                 }
 
                 //Set steering range
-                if (steering > 30) {
+                if (steering > 30)
+                {
                     steerrange = 30;
-                } else if (steering < -30) {
+                } else if (steering < -30)
+                {
                     steerrange = -30;
-                } else {
+                } else
+                {
                     steerrange = steering;
                 }
 
@@ -176,7 +182,6 @@ public class MainActivity extends AppCompatActivity {
 
                 heartbeat = heartbeat + 1;
             }
-
             ;
         };
 
@@ -188,10 +193,13 @@ public class MainActivity extends AppCompatActivity {
         //Up/Down Buttons
         ImageButton btnUp = (ImageButton) findViewById(R.id.btnUp);
         //Up Button
-        btnUp.setOnClickListener(new View.OnClickListener() {
+        btnUp.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                if (UpDown < 2) {
+            public void onClick(View v)
+            {
+                if (UpDown < 2)
+                {
                     UpDown = UpDown + 0.1; //Raise pulse width
                 }
             }
@@ -199,10 +207,13 @@ public class MainActivity extends AppCompatActivity {
 
         ImageButton btnDown = (ImageButton) findViewById(R.id.btnDown);
         //Down Button
-        btnDown.setOnClickListener(new View.OnClickListener() {
+        btnDown.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                if (UpDown > 1) {
+            public void onClick(View v)
+            {
+                if (UpDown > 1)
+                {
                     UpDown = UpDown - 0.1; //Lower pulse width
                 }
             }
@@ -214,7 +225,8 @@ public class MainActivity extends AppCompatActivity {
         btnLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (LR > 1) {
+                if (LR > 1)
+                {
                     LR = LR - 0.1; //Lower pulse width
                 }
             }
@@ -224,7 +236,8 @@ public class MainActivity extends AppCompatActivity {
         btnRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (LR < 2) {
+                if (LR < 2)
+                {
                     LR = LR + 0.1; //Raise pulse width
                 }
             }
@@ -250,13 +263,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v)
             {
                 if (Run == 0)
-                    {
-                        Run = 1;
-                    }
+                {
+                    Run = 1;
+                }
                 else
-                    {
-                        Run = 0;
-                    }
+                {
+                    Run = 0;
+                }
 
                 ImageButton button = (ImageButton) v;
                 int icon;
@@ -338,7 +351,8 @@ public class MainActivity extends AppCompatActivity {
         //SensorManager.SENSOR_DELAY_NORMAL (200,000uS) is slow, causing choppiness
     }
 
-    public void getIPandPort() {
+    public void getIPandPort()
+    {
         String iPandPort = txtAddress.getText().toString();
         Log.d("MYTEST", "IP String: " + iPandPort);
         String temp[] = iPandPort.split(":");
@@ -348,24 +362,29 @@ public class MainActivity extends AppCompatActivity {
         Log.d("MY TEST", "PORT:" + wifiModulePort);
     }
 
-    public class Socket_AsyncTask extends AsyncTask<Void, Void, Void> {
+    public class Socket_AsyncTask extends AsyncTask<Void, Void, Void>
+    {
         Socket socket;
 
         @Override
-        protected Void doInBackground(Void... params) {
-            try {
+        protected Void doInBackground(Void... params)
+        {
+            try
+            {
                 InetAddress inetAddress = InetAddress.getByName(MainActivity.wifiModuleIp);
                 socket = new java.net.Socket(inetAddress, MainActivity.wifiModulePort);
                 DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
                 dataOutputStream.writeBytes(CMD);
                 dataOutputStream.close();
                 socket.close();
-            } catch (UnknownHostException e) {
+            } catch (UnknownHostException e)
+            {
                 e.printStackTrace();
-            } catch (IOException e) {
+            } catch (IOException e)
+            {
                 e.printStackTrace();
             }
             return null;
         }
-        }
     }
+}
